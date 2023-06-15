@@ -1,2 +1,10 @@
-<h1>Recipes#index</h1>
-<p>Find me in app/views/recipes/index.html.erb</p>
+<div class="contents row">
+  <% @recipes.each do |recipe| %>
+    <div class="content_post" style="background-image: url(<%= recipe.image %>);">
+      <p><%= recipe.text %></p>
+      <span class="name">
+        <%= recipe.name %>
+      </span>
+    </div>
+  <% end %>
+</div>
