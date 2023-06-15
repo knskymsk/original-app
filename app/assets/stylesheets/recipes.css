@@ -1,0 +1,21 @@
+.wrapper {
+  display: flex;
+}
+
+
+.chat {
+  background-color: #b0c4de;
+  width: 100vw;
+}
+
+.chat-header {
+  height: 100px;
+}
+.messages {
+  background-color: #00ff7f;
+  height: calc(100vh - 100px - 90px);
+}
+.form {
+  background-color: #e6e6fa;
+  height: 90px;
+}
