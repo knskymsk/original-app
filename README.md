@@ -5,9 +5,9 @@
 
 |          Column        |    Type   |            Options             |
 | ------------------     | --------- | ------------------------------ |
-| nickname               | string    | null: false,                   |
+| nickname               | string    | null: false                    |
 | email                  | string    | null: false,  unique: true     |
-| encrypted_password     | string    | null: false,                   |
+| encrypted_password     | string    | null: false                    |
 
 
 ### Association
@@ -23,14 +23,15 @@ has_one  :favorites
 
 |          Column        |    Type    |            Options               |
 | ---------------------  | ---------- | ------------------------------   |
-| title                  | string     | null: false,                     |
-| allergy                | string     | null: false,                     |
-| cooking_time           | integer    | null: false,                     |
-| ingredients            | string     | null: false,                     |
-| procedure              | string     | null: false,                     |
-| shelf_life             | string     | null: false,                     |
-| freezable_id           | integer    | null: false,                     |
-| word                   | text       | null: false,                     |
+| title                  | string     | null: false                      |
+| photo_cooking          | string     | null: false                      |
+| allergy                | string     | null: false                      |
+| cooking_time           | integer    | null: false                      |
+| ingredients            | string     | null: false                      |
+| procedure              | string     | null: false                      |
+| shelf_life             | string     | null: false                      |
+| freezable_id           | integer    | null: false                      |
+| word                   | text       | null: false                      |
 | user                   | references | null: false,  foreign_key: true  |
 
 
@@ -48,7 +49,7 @@ has_many   :favorites
 
 |          Column         |    Type    |            Options               |
 | ---------------------   | ---------  | ------------------------------   |
-| content                 | string     | null: false,                     |
+| content                 | string     | null: false                      |
 | user                    | references | null: false,  foreign_key: true  |
 | recipe                  | references | null: false,  foreign_key: true  |
 

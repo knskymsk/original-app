@@ -3,7 +3,7 @@
     <div class='account-page__inner--left account-page__header'>
       <h2>☆アカウント編集☆</h2>
       <%# <h5>アカウント編集</h5> %>
-      <%= link_to "ログアウト", "#", class: 'btn'%>
+      <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'btn'%>
       <%= link_to :back, class: 'btn btn-outline-info' do %>
         トップページに戻る
       <% end %>

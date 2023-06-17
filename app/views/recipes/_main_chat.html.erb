@@ -1,11 +1,14 @@
 <div class="chat-header">
 
   <p class="title">Allergy Baby Avenger</p>
-
+  <%= image_tag "kids_eat.png", class: "recipe-image-title" %>
   <div class="header-bar-top">
-    <div class="nickname">
-      <%= link_to current_user.nickname, edit_user_path(current_user) %>
-    </div>
+    <% if user_signed_in? %>
+      <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %>
+      <div class="nickname">
+        <%= link_to current_user.nickname, edit_user_path(current_user) %>
+      </div>
+    <% end %>
   </div>
 
 </div>

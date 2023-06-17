@@ -55,6 +55,21 @@
 	-webkit-box-reflect: below -0.25em -webkit-gradient(linear, left bottom, left top, from(rgba(255, 255, 255, .6)), to(transparent));
 }
 
+.recipe-image-title {
+  height: 120px;
+  width: 120px;
+  position: absolute;
+  top: 1px;
+  left: 750px;
+}
+
+.logout {
+  position: absolute;
+  font-size: 25px;
+  top: 40px;
+  left: 1570px;
+}
+
 
 
 
