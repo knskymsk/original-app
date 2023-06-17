@@ -1,19 +1,21 @@
 <div class='account-page' id='account-page'>
   <div class='account-page__inner clearfix'>
     <div class='account-page__inner--left account-page__header'>
-      <h2>Edit Account</h2>
-      <h5>アカウントの編集</h5>
+      <h2>☆アカウント編集☆</h2>
+      <%# <h5>アカウント編集</h5> %>
       <%= link_to "ログアウト", "#", class: 'btn'%>
-      <%= link_to "チャットページに戻る", :back, class: 'btn'%>
+      <%= link_to :back, class: 'btn btn-outline-info' do %>
+        トップページに戻る
+      <% end %>
     </div>
     <div class='account-page__inner--right user-form'>
       <%= form_with model: current_user, local: true do |f|%>
         <div class='field'>
           <div class='field-label'>
-            <%= f.label :name%>
+            <%= f.label :nickname%>
           </div>
           <div class='field-input'>
-            <%= f.text_field :name, autofocus: true%>
+            <%= f.text_field :nickname, autofocus: true%>
           </div>
         </div>
         <div class='field'>
