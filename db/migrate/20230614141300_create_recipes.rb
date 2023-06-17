@@ -9,7 +9,7 @@ class CreateRecipes < ActiveRecord::Migration[6.0]
       t.string     :shelf_life,    null: false
       t.integer    :freezable_id,  null: false
       t.text       :word,          null: false
-      #t.references :user,          null: false, foreign_key: true
+      t.references :user,          null: false, foreign_key: true
       t.timestamps
     end
   end
