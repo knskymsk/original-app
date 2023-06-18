@@ -4,9 +4,13 @@
   <%= image_tag "kids_eat.png", class: "recipe-image-title" %>
   <div class="header-bar-top">
     <% if user_signed_in? %>
-      <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %>
+      <%= link_to destroy_user_session_path, method: :delete, class: "logout" do %>
+        <button type="button" class="btn btn-outline-danger">ログアウト</button>
+      <% end %>
       <div class="nickname">
-        <%= link_to current_user.nickname, edit_user_path(current_user) %>
+        <%= link_to edit_user_path(current_user) do %>
+          <button type="button" class="btn btn-outline-warning" style="font-size: 19px; padding: 0 30px 10px 30px;"><%= current_user.nickname %></button>
+        <% end %>
       </div>
     <% end %>
   </div>
@@ -16,7 +20,7 @@
 
 
 <div class="messages">
-
+    <%= image_tag "baby-food.jpg", class: "baby-food" %>
 </div>
 
 
