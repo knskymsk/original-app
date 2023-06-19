@@ -6,6 +6,7 @@
 <body>
     <div class="box" >
       <%= form_with model: resource, as: resource_name, url: session_path(resource_name), local: true do |f|%>
+      <%= render "devise/shared/error_recipes", resource: resource %>
         <h1>Login</h1>
         <%= f.email_field :email, placeholder: "Email" %>
         <%= f.password_field :password, placeholder: "Password" %>

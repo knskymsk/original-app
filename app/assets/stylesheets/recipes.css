@@ -17,9 +17,9 @@
 }
 
 .header-bar-top {
-  height: 100px;
+  height: 120px;
   padding: 0 20px;
-  background-color: #fffafa;
+  background-color: #fffaf0;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -40,21 +40,65 @@
 	text-align:center;
 	line-height:0.95em;
 	font-weight:bold;
-	color: #FFF;
+	color: #ffb6c1;
 
   position: absolute;
   top: 10px;
   left: 20px;
 
-	text-shadow: 
-		0 0 0.05em #F06292,
-		0 0 0.10em #F06292,
-		0 0 0.15em #F06292,
-		0 0 0.30em #F06292;
-	filter: saturate(80%);
-	-webkit-background-clip: text;
-	-webkit-box-reflect: below -0.25em -webkit-gradient(linear, left bottom, left top, from(rgba(255, 255, 255, .6)), to(transparent));
+	text-shadow:
+		1px -1px 1px #BDBDBD,
+		-1px 2px 1px #737272,
+		-2px 4px 1px #767474,
+		-3px 6px 1px #787777,
+		-4px 8px 1px #424242,
+		-5px 10px 1px #616161,
+		-6px 12px 1px #757575,
+		-7px 14px 1px #9E9E9E,
+		-8px 16px 1px #BDBDBD,
+		-9px 18px 1px #E0E0E0;
 }
+
+
+
+
+a.btn_11 {
+  font-size: 18px; /* 必要なサイズに調整する */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  position: absolute;
+  top: 30px;
+  left: 1300px;
+  display: inline-block;
+	text-align: center;
+	vertical-align: middle;
+	text-decoration: none;
+	/* width: 120px; */
+	margin: auto;
+	padding: 1rem 4rem;
+	font-weight: bold;
+	background-image: linear-gradient(to right, #27acd9 0%, #b4e12b 100%);
+	border-radius: 100vh;
+	color: #fff;
+	border: 2px solid #fff;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, .2);
+	-webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, .2);
+	transition: 0.5s;
+  white-space: nowrap;
+}
+a.btn_11:hover {
+	color: #fff;
+	background-image: linear-gradient(to left, #27acd9 0%, #b4e12b 100%);
+}
+
+
+
+
+a.btn_10:hover {
+	color: #fff;
+	background-image: linear-gradient(to left, #27acd9 0%, #b4e12b 100%);
+}
+
 
 .recipe-image-title {
   height: 120px;
@@ -74,7 +118,11 @@
 
 
 
-/* 新規登録画面、ログイン画面 */
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
 
 
@@ -86,7 +134,7 @@
 
 .messages {
   background-color: #ffffff;
-  height: calc(100vh - 100px - 90px);
+  height: calc(100vh - 100px - 60px);
 }
 
 .baby-food {
@@ -97,7 +145,47 @@
 
 
 
+
+
+
 .form {
-  background-color: #e6e6fa;
-  height: 70px;
+  background-color: #fffaf0;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.concept {
+  padding-right: 10px;
+  font-size:1.5em;
+	text-align:center;
+	line-height:0.95em;
+	font-weight:bold;
+	text-shadow:
+		0 0.03em 0.03em #808080,
+		0 0.03em 0.03em #808080,
+		0 0.03em 0.03em #FBE9E7;
+}
+
+.hero {
+	font-size:1.5em;
+	text-align:center;
+	line-height:0.95em;
+	font-weight:bold;
+	color: #800000;
+	text-shadow: 
+		0 0.05em 0.08em rgba(0,0,0,0.7);
+}
+
+.mozi {
+  padding-left: 10px;
+  font-size:1.5em;
+	text-align:center;
+	line-height:0.95em;
+	font-weight:bold;
+	text-shadow:
+		0 0.03em 0.03em #808080,
+		0 0.03em 0.03em #808080,
+		0 0.03em 0.03em #FBE9E7;
 }

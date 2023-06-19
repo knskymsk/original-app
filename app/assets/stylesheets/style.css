@@ -27,7 +27,7 @@ body{
 }
 
 /* ユーザーIDとパスワード入力ボックスのスタイル */
-.box input[type="email"], .box input[type="password"]{
+.box input[type="email"], .box input[type="password"], .box input[type="text"]{
   border: 0;
   background: none;
   display: block;
@@ -43,7 +43,7 @@ body{
 }
 
 /* 入力ボックスがフォーカスされたときのスタイル（幅が大きくなる＆枠の色が変わる） */
-.box input[type="email"]:focus, .box input[type="password"]:focus{
+.box input[type="email"]:focus, .box input[type="password"]:focus, .box input[type="text"]:focus{
   width: 100%;
   box-sizing: border-box;
   border-color: #2ecc71;
@@ -56,7 +56,7 @@ body{
   display: block;
   margin: 20px auto;
   text-align: center;
-  border: 2px solid #2ecc71;;
+  border: 2px solid #ffa07a;
   width: 100%;
   box-sizing: border-box;
   padding: 14px 0;
@@ -69,6 +69,10 @@ body{
 
 /* Loginボタンをマウスオーバーしたときのスタイル */
 .box input[type="submit"]:hover{
-  background: #2ecc71;
+  background: #ffa07a;
    
+}
+
+.border-line {
+  color: #8a2be2;
 }
