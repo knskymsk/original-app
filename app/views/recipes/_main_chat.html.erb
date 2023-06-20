@@ -1,0 +1,36 @@
+<div class="chat-header">
+
+  <p class="title">Allergy Baby Avenger</p>
+  <%= image_tag "kids_eat.png", class: "recipe-image-title" %>
+  <div class="header-bar-top">
+    <% if user_signed_in? %>
+          <%= link_to new_recipe_path(current_user), class: "btn_11" do %>
+            レシピ投稿
+          <% end %>
+          <%= link_to destroy_user_session_path, method: :delete, class: "logout" do %>
+            <button type="button" class="btn btn-outline-danger">ログアウト</button>
+          <% end %>
+          <div class="nickname">
+            <%= link_to edit_user_path(current_user) do %>
+              <button type="button" class="btn btn-outline-warning" style="font-size: 19px; padding: 5px 30px 5px 30px;"><%= current_user.nickname %></button>
+            <% end %>
+          </div>
+    <% end %>
+  </div>
+</div>
+
+
+
+
+
+<div class="messages">
+    <%= image_tag "baby-food.jpg", class: "baby-food" %>
+</div>
+
+
+
+<div class="form">
+  <div class="concept">～ concept  </div>
+  <div class="hero">Tiny Tastemakers Unleashed ！ </div>
+  <div class="mozi"> . 2023 ～</div>
+</div>

@@ -1,0 +1,23 @@
+<head>
+    <meta charset="UTF-8">
+    <title>Animated UPDATE Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="box">
+    <%= form_with model: current_user, local: true do |f| %>
+      <h1>アカウント</h1>
+      <h2>編集</h2>
+      <h1 class=border-line>-------------</h1>
+      <%= f.label :・nickname・ %>
+      <%= f.text_field :nickname, autofocus: true %>
+      <%= f.label :・email・ %>
+      <%= f.email_field :email %>
+        <%= f.submit "Update", class: 'btn btn-outline-info' %>
+        <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: 'btn btn-danger', style: "margin: 20px 0 20px 0;" %>
+        <%= link_to :back, class: 'btn btn-warning' do %>
+          トップページに戻る
+        <% end %>
+    <% end %>
+  </div>
+</body>
