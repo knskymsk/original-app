@@ -82,3 +82,9 @@ body{
 .border-line {
   color: #8a2be2;
 }
+
+@media (max-width: 1200px) {
+  div {
+    color: red;
+  }
+}
