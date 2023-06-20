@@ -9,82 +9,82 @@
 
     <%# <%= render 'shared/error_messages', model: f.object %> 
 
-    <%# レシピ画像 %>
-    <div class="img-upload">
-      <div class="weight-bold-text">
-        レシピ画像
-        <span class="indispensable">必須</span>
-      </div>
-      <div class="click-upload">
-        <p>
-          クリックしてファイルをアップロード
-        </p>
-        <%= f.file_field :image, id:"item-image" %>
-      </div>
-    </div>
-    <%# /商品画像 %>
-    <%# 商品名と商品説明 %>
-    <div class="new-items">
-      <div class="weight-bold-text">
-        レシピ名
-        <span class="indispensable">必須</span>
-      </div>
-      <%= f.text_area :title, class:"recipes-text", id:"recipe-name", placeholder:"レシピ名（必須 40文字まで)", maxlength:"40" %>
-      <div class="items-explain">
-        <div class="weight-bold-text">
-          商品の説明
-          <span class="indispensable">必須</span>
-        </div>
-        <%= f.text_area :description, class:"recipes-text", id:"recipe-info", placeholder:"商品の説明（必須 1,000文字まで）" ,rows:"7" ,maxlength:"1000" %>
-      </div>
-    </div>
-    <%# /商品名と商品説明 %>
 
-    <%# レシピの詳細 %>
-    <div class="items-detail">
-      <%# <div class="weight-bold-text">商品の詳細</div> %>
-      <div class="form">
+    <%# レシピ名 %>
+    <div class="new-items">
         <div class="weight-bold-text">
-          アレルギー
+          レシピ名
           <span class="indispensable">必須</span>
         </div>
-        <%= f.collection_select(:allergy_id, Allergy.all, :id, :allergy, {}, {class:"select-box", id:"item-category"}) %>
-        <div class="weight-bold-text">
-          調理時間
-          <span class="indispensable">必須</span>
-        </div>
-        <%= f.text_area :cooking_time, class:"recipes-text", id:"recipe-name", placeholder:"調理時間" %>
-        <div class="weight-bold-text">
-          食材
-          <span class="indispensable">必須</span>
-        </div>
-        <%= f.text_area :ingredients, class:"recipes-text", id:"recipe-name", placeholder:"食材" %>
-        <div class="items-explain">
-          <div class="weight-bold-text">
-            調理の手順
-            <span class="indispensable">必須</span>
-          </div>
-        </div>
-        <%= f.text_area :procedure, class:"recipes-text", id:"recipe-info", placeholder:"調理の手順（必須 5,000文字まで）" ,rows:"7" ,maxlength:"5000" %>
-        <div class="weight-bold-text">
-          日持ち
-          <span class="indispensable">必須</span>
-        </div>
-        <%= f.text_area :shelf_life, class:"recipes-text", id:"recipe-name", placeholder:"日持ち" %>
-        <div class="weight-bold-text">
-          冷凍保存
-          <span class="indispensable">必須</span>
-        </div>
-        <%= f.collection_select(:freezable_id, Freezable.all, :id, :freezable, {}, {class:"select-box", id:"item-category"}) %>
-        <div class="items-explain">
-          <div class="weight-bold-text">
-            一言
-            <span class="indispensable">必須</span>
-          </div>
-          <%= f.text_area :word, class:"recipes-text", id:"recipe-info", placeholder:"一言（必須 500文字まで）" ,rows:"7" ,maxlength:"500" %>
-        </div>
-      </div>
+        <%= f.text_field :title, class:"recipe-title", id:"recipe-name", placeholder:"レシピのタイトル（必須 50文字まで)", maxlength:"50" %>
     </div>
+
+    <%# レシピの画像 %>
+        <div class="new-items">
+          <div class="weight-bold-text">
+          レシピの画像
+          <span class="indispensable">必須</span>
+            <div class="form-group">
+              <label class="text-secondary"></label><br>
+              <%= f.file_field :image %>
+            </div>
+            <div id="new-image"></div>
+        </div>
+
+
+        <%# レシピの詳細 %>
+        <div class="items-detail">
+          <%# <div class="weight-bold-text">商品の詳細</div> %>
+          <div class="form">
+            <%# アレルギー %>
+            <div class="weight-bold-text">
+              アレルギー
+              <span class="indispensable">必須</span>
+            </div>
+            <%= f.collection_select(:allergy_id, Allergy.all, :id, :allergy, {}, {class:"select-box", id:"item-category"}) %>
+            
+            <div class="weight-bold-text">
+              調理時間
+              <span class="indispensable">必須</span>
+            </div>
+            <%= f.text_area :cooking_time, class:"items-text", id:"recipe-name", placeholder:"調理時間" %>
+            
+            <div class="weight-bold-text">
+              食材
+              <span class="indispensable">必須</span>
+            </div>
+            <%= f.text_area :ingredients, class:"items-text", id:"recipe-name", placeholder:"食材" %>
+            
+            <div class="items-explain">
+              <div class="weight-bold-text">
+                調理の手順
+                <span class="indispensable">必須</span>
+              </div>
+            </div>
+            <%= f.text_area :procedure, class:"items-text", id:"recipe-info", placeholder:"調理の手順（必須 5,000文字まで）" ,rows:"7" ,maxlength:"5000" %>
+            
+            <div class="weight-bold-text">
+              日持ち
+              <span class="indispensable">必須</span>
+            </div>
+            <%= f.text_area :shelf_life, class:"items-text", id:"recipe-name", placeholder:"日持ち" %>
+            
+            <div class="weight-bold-text">
+              冷凍保存
+              <span class="indispensable">必須</span>
+            </div>
+            <%= f.collection_select(:freezable_id, Freezable.all, :id, :freezable, {}, {class:"select-box", id:"item-category"}) %>
+            
+            <div class="items-explain">
+              <div class="weight-bold-text">
+                一言
+                <span class="indispensable">必須</span>
+              </div>
+              <%= f.text_area :word, class:"items-text", id:"recipe-info", placeholder:"一言（必須 500文字まで）" ,rows:"7" ,maxlength:"500" %>
+            </div>
+          </div>
+        </div>
+
     <%# /商品の詳細 %>
 
 
