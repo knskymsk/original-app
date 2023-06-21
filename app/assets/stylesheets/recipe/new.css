@@ -125,6 +125,10 @@
   text-align: center;
 }
 
+.new-items-two {
+  padding-left: 10px;
+}
+
 /* アレルギー */
 .items-sell-form {
   display: flex;
@@ -169,19 +173,17 @@
 
 /* 調理時間、日持ち */
 .items-text-two {
-  text-align: center;
+  display: flex;
   align-items: center;
   justify-content: center;
-  width: 250px;
-  padding: 5px 10px 1px;
+  flex-direction: column;
+  width: 110%;
+  padding: 6px 20px 5px 20px;
   border-radius: 4px;
   border: 1px solid #ccc;
   font-size: 16px;
   resize: none;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start; /* Change to align-items: flex-start */
-  box-sizing: border-box;
+  height: 40px;
 }
 
 .items-explain {
@@ -308,7 +310,7 @@
     background-color: #FFF;
     width: 70vw;
     min-width: 450px;
-    padding: 12vh 15vw;
+    padding: 16vh 15vw;
     flex-grow: 1; /* Allow the main section to grow to fill the remaining vertical space */
     display: flex;
     flex-direction: column;
@@ -329,22 +331,32 @@
 
   .new-items {
     align-items: center;
-
+    min-width: 500px;
+    margin: 0 auto; 
   }
 
   .new-items-one {
-    padding: 80px; 
+    padding: 30px 80px 80px 80px; 
+    margin: 0 auto; 
+  }
+
+  .new-items-two {
+    padding-left: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 
   .items-text {
     height: 200px;
     width: 100%;
-    text-align: center;
     align-items: center;
   }
 
   .items-text-two {
-    width: 100%;
+    width: 50%;
+    margin: 0 auto; 
   }
 
   .items-detail {

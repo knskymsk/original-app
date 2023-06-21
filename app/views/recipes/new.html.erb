@@ -61,7 +61,7 @@
                       <span class="indispensable">必須</span>
                     </div>
                   </div>
-                  <%= f.text_area :procedure, class:"items-text", id:"recipe-info", placeholder:"食材",rows:"7" ,maxlength:"5000" %>
+                  <%= f.text_area :procedure, class:"items-text", id:"recipe-info", placeholder:"材料",rows:"7" ,maxlength:"5000" %>
                 </div>
                 <div class="new-items">
                   <%# 調理の手順 %>
@@ -81,7 +81,7 @@
                   </div>
                   <%= f.text_area :shelf_life, class:"items-text-two", id:"recipe-name", placeholder:"日持ち" %>
                 </div>
-                <div class="new-items">
+                <div class="new-items-two">
                   <%# 冷凍保存 %>
                   <div class="weight-bold-text">
                     冷凍保存
@@ -96,7 +96,7 @@
                       一言
                       <span class="indispensable">必須</span>
                     </div>
-                    <%= f.text_area :word, class:"items-text", id:"recipe-info", placeholder:"一言（必須 500文字まで）" ,rows:"7" ,maxlength:"500" %>
+                    <%= f.text_area :word, class:"items-text", id:"recipe-info", placeholder:"一言（500文字まで）" ,rows:"7" ,maxlength:"500" %>
                   </div>
                 </div>
               </div>
