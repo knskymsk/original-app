@@ -1,13 +1,15 @@
 class Recipe < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
 
+
+
   has_one_attached :image
   belongs_to :user
   belongs_to :allergy
   belongs_to :freezable
 
   validates :title,           presence: true
-  validates :photo_cooking,   presence: true
+  # validates :photo_cooking,   presence: true
   validates :allergy_id,      presence: true, numericality: { other_than: 1 , message: "can't be blank"}
   validates :cooking_time,    presence: true
   validates :ingredients,     presence: true

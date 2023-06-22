@@ -6,7 +6,7 @@
   <div class="items-sell-main">
     <h2 class="items-sell-title">～Cooking Chronicles～</h2>
     <div class="items-sell-form">
-      <%= form_with model: @recipe, local: true do |f| %>
+      <%= form_with(model: @recipe, url: recipes_path, local: true, multipart: true) do |f| %>
 
       <%# <%= render 'shared/error_messages', model: f.object %> 
 
@@ -37,34 +37,34 @@
           <div class="items-detail">
             <div class="form">
               <div class="items-sell-form">
+                <%# アレルギー %>
                 <div class="new-items-two">
-                  <%# アレルギー %>
                   <div class="weight-bold-text">
                     アレルギー
                     <span class="indispensable">必須</span>
                   </div>
                   <%= f.collection_select(:allergy_id, Allergy.all, :id, :allergy, {}, {class:"select-box", id:"item-category"}) %>
                 </div>
+                <%# 調理時間 %>
                 <div class="new-items">
-                  <%# 調理時間 %>
                   <div class="weight-bold-text">
                     調理時間
                     <span class="indispensable">必須</span>
                   </div>
                   <%= f.text_area :cooking_time, class:"items-text-two", id:"recipe-name", placeholder:"調理時間" %>
                 </div>
+                <%# 材料 %>
                 <div class="new-items">
-                  <%# 材料 %>
                   <div class="items-explain">
                     <div class="weight-bold-text">
                       材料
                       <span class="indispensable">必須</span>
                     </div>
                   </div>
-                  <%= f.text_area :procedure, class:"items-text", id:"recipe-info", placeholder:"材料",rows:"7" ,maxlength:"5000" %>
+                  <%= f.text_area :ingredients, class:"items-text", id:"recipe-info", placeholder:"材料",rows:"7" ,maxlength:"5000" %>
                 </div>
+                <%# 調理の手順 %>
                 <div class="new-items">
-                  <%# 調理の手順 %>
                   <div class="items-explain">
                     <div class="weight-bold-text">
                       調理の手順
@@ -73,24 +73,24 @@
                   </div>
                   <%= f.text_area :procedure, class:"items-text", id:"recipe-info", placeholder:"調理の手順" ,rows:"7" ,maxlength:"5000" %>
                 </div>
+                <%# 日持ち %>
                 <div class="new-items">
-                  <%# 日持ち %>
                   <div class="weight-bold-text">
                     日持ち
                     <span class="indispensable">必須</span>
                   </div>
                   <%= f.text_area :shelf_life, class:"items-text-two", id:"recipe-name", placeholder:"日持ち" %>
                 </div>
+                <%# 冷凍保存 %>
                 <div class="new-items-two">
-                  <%# 冷凍保存 %>
                   <div class="weight-bold-text">
                     冷凍保存
                     <span class="indispensable">必須</span>
                   </div>
                   <%= f.collection_select(:freezable_id, Freezable.all, :id, :freezable, {}, {class:"select-box", id:"item-category"}) %>
                 </div>
+                <%# 一言 %>
                 <div class="new-items">
-                  <%# 一言 %>
                   <div class="items-explain">
                     <div class="weight-bold-text">
                       一言
@@ -106,7 +106,7 @@
 
     <div class="items-sell-buttons">
       <div class="sell-btn-contents">
-        <%= f.submit "投稿する" ,class:"sell-btn" %>
+        <%= f.submit "投稿する", class:"sell-btn" %>
         <%=link_to 'もどる', root_path, class:"back-btn" %>
       </div>
     </div>
