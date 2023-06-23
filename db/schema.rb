@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_06_22_133322) do
+ActiveRecord::Schema.define(version: 2023_06_12_132437) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -35,16 +35,17 @@ ActiveRecord::Schema.define(version: 2023_06_22_133322) do
 
   create_table "recipes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title", null: false
-    t.string "allergy_id", null: false
+    t.string "photo_cooking", null: false
+    t.integer "allergy_id", null: false
     t.string "cooking_time", null: false
     t.string "ingredients", null: false
     t.string "procedure", null: false
     t.string "shelf_life", null: false
     t.integer "freezable_id", null: false
     t.text "word", null: false
+    t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "user_id"
     t.index ["user_id"], name: "index_recipes_on_user_id"
   end
 
