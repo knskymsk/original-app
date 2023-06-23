@@ -2,7 +2,7 @@ class CreateRecipes < ActiveRecord::Migration[6.0]
   def change
     create_table :recipes do |t|
       t.string     :title,          null: false
-      t.string     :photo_cooking
+      t.string     :image
       t.integer    :allergy_id,     null: false
       t.string     :cooking_time,   null: false
       t.string     :ingredients,    null: false

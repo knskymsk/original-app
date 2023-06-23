@@ -24,7 +24,7 @@ has_one  :favorites
 |          Column        |    Type    |            Options               |
 | ---------------------  | ---------- | ------------------------------   |
 | title                  | string     | null: false                      |
-| photo_cooking          | string     | null: false                      |
+| image                  | string     |                                  |
 | allergy_id             | string     | null: false                      |
 | cooking_time           | integer    | null: false                      |
 | ingredients            | string     | null: false                      |
