@@ -82,3 +82,18 @@ body{
 .border-line {
   color: #8a2be2;
 }
+
+/* レスポンシブデザイン */
+
+@media (max-width: 1300px) {
+  .box {
+    width: 20%;
+    padding: 1px;
+  }
+
+  .box input[type="email"],
+  .box input[type="password"],
+  .box input[type="text"] {
+    width: 90%;
+  }
+}

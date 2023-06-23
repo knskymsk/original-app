@@ -29,8 +29,39 @@
 
 
 
-<div class="form">
-  <div class="concept">～ concept  </div>
-  <div class="hero">Tiny Tastemakers Unleashed ！ </div>
-  <div class="mozi"> . 2023 ～</div>
+<div class="form-show">
+
+  <div class='item-contents'>
+    <div class="subtitle" >
+    </div>
+    <ul class='item-lists'>
+        <% @recipes.each do |recipe|%>
+          <li class='list'>
+            <%= link_to recipe_path(recipe.id) do %>
+              <div class='item-img-content'>
+                <%= image_tag recipe.image.variant(resize: '200x200'), class: "item-img" if recipe.image.attached? %>
+              </div>
+              <div class='item-info'>
+                <h3 class='item-name'>
+                  <%= recipe.title %>
+                </h3>
+                <div class='item-price'>
+                  <span><%= recipe.allergy.allergy %></span>
+                  <div class='star-btn'>
+                    <%= image_tag "star.png", class:"star-icon" %>
+                    <span class='star-count'>0</span>
+                  </div>
+                </div>
+              </div>
+            <% end %>
+          </li>
+        <% end %>
+    </ul>
+  </div>
+
+  <div class="footer-mozi">
+    <div class="concept">～ concept  </div>
+    <div class="hero">Tiny Tastemakers Unleashed ！ </div>
+    <div class="mozi"> . 2023 ～</div>
+  </div>
 </div>

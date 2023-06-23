@@ -4,125 +4,118 @@
 
   </header>
   <div class="items-sell-main">
-    <h2 class="items-sell-title">レシピの情報を入力</h2>
-    <%= form_with model: @recipe, local: true do |f| %>
+    <h2 class="items-sell-title">～Cooking Chronicles～</h2>
+    <div class="items-sell-form">
+      <%= form_with(model: @recipe, url: recipes_path, local: true, multipart: true) do |f| %>
 
-    <%# <%= render 'shared/error_messages', model: f.object %> 
+      <%# <%= render 'shared/error_messages', model: f.object %> 
 
 
-    <%# レシピ名 %>
-    <div class="new-items">
-        <div class="weight-bold-text">
-          レシピ名
-          <span class="indispensable">必須</span>
-        </div>
-        <%= f.text_field :title, class:"recipe-title", id:"recipe-name", placeholder:"レシピのタイトル（必須 50文字まで)", maxlength:"50" %>
-    </div>
-
-    <%# レシピの画像 %>
-        <div class="new-items">
+      <%# レシピ名 %>
+      <div class="new-items">
           <div class="weight-bold-text">
-          レシピの画像
-          <span class="indispensable">必須</span>
-            <div class="form-group">
-              <label class="text-secondary"></label><br>
-              <%= f.file_field :image %>
-            </div>
-            <div id="new-image"></div>
-        </div>
+            レシピ名
+            <span class="indispensable">必須</span>
+          </div>
+          <%= f.text_field :title, class:"recipe-title", id:"recipe-name", placeholder:"レシピのタイトル", maxlength:"50" %>
+      </div>
+
+        <%# レシピの画像 %>
+        <div class="new-items-one">
+            <div class="weight-bold-text">
+            レシピの画像
+            <span class="indispensable">必須</span>
+              <div class="form-group">
+                <label class="text-secondary"></label><br>
+                <%= f.file_field :image %>
+              </div>
+              <div id="new-image"></div>
+          </div>
 
 
-        <%# レシピの詳細 %>
-        <div class="items-detail">
-          <%# <div class="weight-bold-text">商品の詳細</div> %>
-          <div class="form">
-            <%# アレルギー %>
-            <div class="weight-bold-text">
-              アレルギー
-              <span class="indispensable">必須</span>
-            </div>
-            <%= f.collection_select(:allergy_id, Allergy.all, :id, :allergy, {}, {class:"select-box", id:"item-category"}) %>
-            
-            <div class="weight-bold-text">
-              調理時間
-              <span class="indispensable">必須</span>
-            </div>
-            <%= f.text_area :cooking_time, class:"items-text", id:"recipe-name", placeholder:"調理時間" %>
-            
-            <div class="weight-bold-text">
-              食材
-              <span class="indispensable">必須</span>
-            </div>
-            <%= f.text_area :ingredients, class:"items-text", id:"recipe-name", placeholder:"食材" %>
-            
-            <div class="items-explain">
-              <div class="weight-bold-text">
-                調理の手順
-                <span class="indispensable">必須</span>
+          <%# レシピの詳細 %>
+          <div class="items-detail">
+            <div class="form">
+              <div class="items-sell-form">
+                <%# アレルギー %>
+                <div class="new-items-two">
+                  <div class="weight-bold-text">
+                    アレルギー
+                    <span class="indispensable">必須</span>
+                  </div>
+                  <%= f.collection_select(:allergy_id, Allergy.all, :id, :allergy, {}, {class:"select-box", id:"item-category"}) %>
+                </div>
+                <%# 調理時間 %>
+                <div class="new-items">
+                  <div class="weight-bold-text">
+                    調理時間
+                    <span class="indispensable">必須</span>
+                  </div>
+                  <%= f.text_area :cooking_time, class:"items-text-two", id:"recipe-name", placeholder:"調理時間" %>
+                </div>
+                <%# 材料 %>
+                <div class="new-items">
+                  <div class="items-explain">
+                    <div class="weight-bold-text">
+                      材料
+                      <span class="indispensable">必須</span>
+                    </div>
+                  </div>
+                  <%= f.text_area :ingredients, class:"items-text", id:"recipe-info", placeholder:"材料",rows:"7" ,maxlength:"5000" %>
+                </div>
+                <%# 調理の手順 %>
+                <div class="new-items">
+                  <div class="items-explain">
+                    <div class="weight-bold-text">
+                      調理の手順
+                      <span class="indispensable">必須</span>
+                    </div>
+                  </div>
+                  <%= f.text_area :procedure, class:"items-text", id:"recipe-info", placeholder:"調理の手順" ,rows:"7" ,maxlength:"5000" %>
+                </div>
+                <%# 日持ち %>
+                <div class="new-items">
+                  <div class="weight-bold-text">
+                    日持ち
+                    <span class="indispensable">必須</span>
+                  </div>
+                  <%= f.text_area :shelf_life, class:"items-text-two", id:"recipe-name", placeholder:"日持ち" %>
+                </div>
+                <%# 冷凍保存 %>
+                <div class="new-items-two">
+                  <div class="weight-bold-text">
+                    冷凍保存
+                    <span class="indispensable">必須</span>
+                  </div>
+                  <%= f.collection_select(:freezable_id, Freezable.all, :id, :freezable, {}, {class:"select-box", id:"item-category"}) %>
+                </div>
+                <%# 一言 %>
+                <div class="new-items">
+                  <div class="items-explain">
+                    <div class="weight-bold-text">
+                      一言
+                      <span class="indispensable">必須</span>
+                    </div>
+                    <%= f.text_area :word, class:"items-text", id:"recipe-info", placeholder:"一言（500文字まで）" ,rows:"7" ,maxlength:"500" %>
+                  </div>
+                </div>
               </div>
-            </div>
-            <%= f.text_area :procedure, class:"items-text", id:"recipe-info", placeholder:"調理の手順（必須 5,000文字まで）" ,rows:"7" ,maxlength:"5000" %>
-            
-            <div class="weight-bold-text">
-              日持ち
-              <span class="indispensable">必須</span>
-            </div>
-            <%= f.text_area :shelf_life, class:"items-text", id:"recipe-name", placeholder:"日持ち" %>
-            
-            <div class="weight-bold-text">
-              冷凍保存
-              <span class="indispensable">必須</span>
-            </div>
-            <%= f.collection_select(:freezable_id, Freezable.all, :id, :freezable, {}, {class:"select-box", id:"item-category"}) %>
-            
-            <div class="items-explain">
-              <div class="weight-bold-text">
-                一言
-                <span class="indispensable">必須</span>
-              </div>
-              <%= f.text_area :word, class:"items-text", id:"recipe-info", placeholder:"一言（必須 500文字まで）" ,rows:"7" ,maxlength:"500" %>
             </div>
           </div>
-        </div>
-
-    <%# /商品の詳細 %>
-
-
-    <%# 注意書き %>
-    <div class="caution">
-      <p class="sentence">
-        <a href="#">禁止されている出品、</a>
-        <a href="#">行為</a>
-        を必ずご確認ください。
-      </p>
-      <p class="sentence">
-        またブランド品でシリアルナンバー等がある場合はご記載ください。
-        <a href="#">偽ブランドの販売</a>
-        は犯罪であり処罰される可能性があります。
-      </p>
-      <p class="sentence">
-        また、出品をもちまして
-        <a href="#">加盟店規約</a>
-        に同意したことになります。
-      </p>
     </div>
-    <%# /注意書き %>
-    <%# 下部ボタン %>
-    <div class="sell-btn-contents">
-      <%= f.submit "投稿する" ,class:"sell-btn" %>
-      <%=link_to 'もどる', root_path, class:"back-btn" %>
+
+    <div class="items-sell-buttons">
+      <div class="sell-btn-contents">
+        <%= f.submit "投稿する", class:"sell-btn" %>
+        <%=link_to 'もどる', root_path, class:"back-btn" %>
+      </div>
     </div>
-    <%# /下部ボタン %>
+
   </div>
   <% end %>
 
   <footer class="items-sell-footer">
-    <ul class="menu">
-      <li><a href="#">プライバシーポリシー</a></li>
-      <li><a href="#">フリマ利用規約</a></li>
-      <li><a href="#">特定商取引に関する表記</a></li>
-    </ul>
-    <%# <%= link_to image_tag('furima-logo-color.png' , size: '185x50'), "/" %> 
+
     <p class="inc">
       © Allergy Baby Avenger
     </p>
