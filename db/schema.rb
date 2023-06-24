@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(version: 2023_06_10_131318) do
 
   create_table "recipes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title", null: false
-    t.string "image"
+    t.string "photo_cooking", null: false
     t.integer "allergy_id", null: false
     t.string "cooking_time", null: false
     t.string "ingredients", null: false
