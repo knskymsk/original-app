@@ -12,7 +12,7 @@ class RecipesController < ApplicationController
     @recipe = Recipe.new(recipe_params)
     @recipe.user = current_user
     if @recipe.save
-      redirect_to root_path
+      redirect_to root_path, notice: "投稿が成功しました。"
     else
       render :new
     end
