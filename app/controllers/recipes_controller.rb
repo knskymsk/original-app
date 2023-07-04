@@ -14,6 +14,7 @@ class RecipesController < ApplicationController
     if @recipe.save
       redirect_to root_path, notice: "投稿が成功しました。"
     else
+      puts @recipe.errors.full_messages  # エラーメッセージを出力
       render :new
     end
   end
