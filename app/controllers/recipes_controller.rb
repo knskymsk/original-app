@@ -11,8 +11,10 @@ class RecipesController < ApplicationController
   def create
     @recipe = Recipe.new(recipe_params)
     @recipe.user = current_user
+    # binding.pry
     if @recipe.save
-      redirect_to root_path, notice: "投稿が成功しました。"
+      redirect_to root_path
+      return
     else
       render :new
     end
@@ -26,6 +28,7 @@ class RecipesController < ApplicationController
     if @recipe && @recipe.user_id == current_user.id
       @recipe.destroy
       redirect_to root_path
+      return
     else
       redirect_to root_path
     end
