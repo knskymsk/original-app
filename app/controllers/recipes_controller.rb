@@ -18,7 +18,6 @@ class RecipesController < ApplicationController
     else
       render :new
     end
-    set_recipe
   end
 
   def show
