@@ -14,7 +14,6 @@ class RecipesController < ApplicationController
     # binding.pry
     if @recipe.save
       redirect_to root_path
-      return
     else
       render :new
     end
