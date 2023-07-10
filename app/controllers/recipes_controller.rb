@@ -13,7 +13,7 @@ class RecipesController < ApplicationController
     @recipe.user = current_user
     # binding.pry
     if @recipe.save
-      redirect_to root_path
+      redirect_to recipes_path
     else
       render :new
     end
