@@ -10,11 +10,10 @@ class RecipesController < ApplicationController
 
   def create
     @recipe = Recipe.new(recipe_params)
-    # @recipe.user = current_user
-    @recipe.user
-    # binding.pry
+    @recipe.user = current_user
+  
     if @recipe.save
-      redirect_to recipes_path
+      redirect_to root_path # トップページにリダイレクト
     else
       render :new
     end
@@ -27,11 +26,9 @@ class RecipesController < ApplicationController
   def destroy
     if @recipe && @recipe.user_id == current_user.id
       @recipe.destroy
-      redirect_to root_path
-      return
-    else
-      redirect_to root_path
     end
+  
+    redirect_to root_path
   end
 
 
