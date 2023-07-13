@@ -11,7 +11,7 @@ class RecipesController < ApplicationController
   def create
     @recipe = Recipe.new(recipe_params)
     @recipe.user = current_user
-  
+    binding.pry
     if @recipe.save
       redirect_to root_path # トップページにリダイレクト
     else
