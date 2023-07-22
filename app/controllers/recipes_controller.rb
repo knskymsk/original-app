@@ -15,8 +15,7 @@ class RecipesController < ApplicationController
     if @recipe.save
       redirect_to root_path
     else
-      # render :new
-      root_path
+      render :new
     end
   end
 
